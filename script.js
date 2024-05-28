@@ -10,49 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const createRecordLink = document.getElementById("create-record-link");
     const resultContainer = document.getElementById("water-result");
 
-    // Category buttons
-    const volumetric = document.getElementById("volumetric-btn");
-    const medicine = document.getElementById("medicine-btn");
-    const nutrition = document.getElementById("nutrition-btn");
-    const converters = document.getElementById("converters-btn");
-
-    // Check if volumetric pressed
-    if (volumetric) {
-        volumetric.addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "categories/volumetric.html"; // Redirect to the volumetric page
-        });
-    }
-
-    // Check if medicine pressed
-    if (medicine) {
-        medicine.addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "categories/medicine.html"; // Redirect to the medicine page
-        });
-    }
-
-    // Check if nutrition pressed
-    if (nutrition) {
-        nutrition.addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "categories/nutrition.html"; // Redirect to the nutrition page
-        });
-    }
-
-    // Check if converters pressed
-    if (converters) {
-        converters.addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "categories/converters.html"; // Redirect to the converters page
-        });
-    }
-
     // Check if edibleBtn pressed 
     if (edibleBtn) {
         edibleBtn.addEventListener("click", function(event) {
             event.preventDefault();
-            window.location.href = "edible_calculator.html"; // Redirect to the Edible Drugs calculator page
+            showEdibleCalculatorPage();
         });
     }
   
@@ -60,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (waterBtn) {
         waterBtn.addEventListener("click", function(event) {
             event.preventDefault();
-            window.location.href = "water_soluble_calculator.html"; // Redirect to the Water Soluble calculator page
+            showWaterCalculatorPage();
         });
     }
 
@@ -84,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
      if (waterCalculateBtn) {
         waterCalculateBtn.addEventListener("click", function() {
             calculateWaterSoluble();
-            
         });
     }
   
@@ -110,10 +71,19 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("volume").value = "";
         document.getElementById("target-concentration").value = "";
         document.getElementById("drug-concentration").value = "";
-
         // Hide the result container and create a record link
         document.getElementById("water-result").style.display = "none";
         document.getElementById("create-record-link").style.display = "none";
+    }
+  
+    // Function to display edible calculator page
+    function showEdibleCalculatorPage() {
+        window.location.href = "edible_calculator.html"; // Redirect to the Edible Drugs calculator page
+    }
+ 
+    // Function to display water calculator page
+    function showWaterCalculatorPage() {
+        window.location.href = "water_soluble_calculator.html"; // Redirect to the Water Soluble calculator page
     }
   
     // Function to process calculation for edible
