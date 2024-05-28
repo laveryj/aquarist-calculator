@@ -28,6 +28,7 @@ header h1 {
   flex: 1; /* This will take up the remaining space */
   padding: 20px; /* Add some padding */
   margin-bottom: 40px; /* Add margin to push the footer down */
+  text-align: center;
 }
 
 .options {
