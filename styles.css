@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fed22e; /* Complementary background color */
+  #background-color: #fed22e;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
