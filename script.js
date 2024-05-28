@@ -10,6 +10,40 @@ document.addEventListener("DOMContentLoaded", function() {
     const createRecordLink = document.getElementById("create-record-link");
     const resultContainer = document.getElementById("water-result");
 
+    // Global declaration of category variables
+    const nutritionCategoryBtn = document.getElementById("nutrition-btn");
+    const medicineCategoryBtn = document.getElementById("medicine-btn");
+    const convertersCategoryBtn = document.getElementById("converters-btn");
+    const volumetricCategoryBtn = document.getElementById("volumetric-btn");
+
+    // Check if nutrition category has been selected
+    if (nutritionCategoryBtn) {
+        nutritionCategoryBtn.addEventListener("click", function() {
+            window.location.href = "nutrition.html"; // Redirect to the nutrition page
+        });
+    }
+
+    // Check if medicine category has been selected
+    if (medicineCategoryBtn) {
+        medicineCategoryBtn.addEventListener("click", function() {
+            window.location.href = "medicine.html"; // Redirect to the medicine page
+        });
+    }
+
+    // Check if converters category has been selected
+    if (convertersCategoryBtn) {
+        convertersCategoryBtn.addEventListener("click", function() {
+            window.location.href = "converters.html"; // Redirect to the converters page
+        });
+    }
+
+    // Check if volumetric category has been selected
+    if (volumetricCategoryBtn) {
+        volumetricCategoryBtn.addEventListener("click", function() {
+            window.location.href = "volumetric.html"; // Redirect to the volumetric page
+        });
+    }
+
     // Check if edibleBtn pressed 
     if (edibleBtn) {
         edibleBtn.addEventListener("click", function(event) {
