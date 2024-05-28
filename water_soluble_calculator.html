@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarist Calculator - Josxph Limited</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Aquarist Calculator</h1>
+    </header>
+
+    <div id="calculator-page">
+        <button class="back-btn" id="back-button">Back</button>
+        <button class="reset-btn" id="reset-button">Reset</button> <!-- New reset button -->
+        <h2 id="calculator-type">Water Soluble</h2>
+        <div id="calculator">
+            <!-- Water Soluble calculator inputs and button -->
+            <label for="volume">Volume of Water (in litres):</label>
+            <input type="number" id="volume" name="volume" placeholder="Enter volume..." required><br>
+            <br>
+
+            <label for="target-concentration">Target Concentration (in mg/l):</label>
+            <input type="number" id="target-concentration" name="target-concentration" placeholder="Enter target concentration..." required><br>
+            <br>
+
+            <label for="drug-concentration">Drug Concentration (in mg/l):</label>
+            <input type="number" id="drug-concentration" name="drug-concentration" placeholder="Enter drug concentration..." required><br>
+            <br>
+            
+            <button id="water-calculate-btn" class="water-calculate-btn">Calculate</button><br>
+
+            <div id="water-result" class="water-result-container"></div>
+            <br>
+            <a id="create-record-link" href="#" style="display:none;">Create a record</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://www.josephlavery.co.uk/content/images/size/w300/2024/03/JL-2020-LOGO-2-4.png" alt="Josxph Limited Logo">
+            <br>
+            <p>&copy; 2024 Josxph Limited</p>
+            <p>v1.0</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

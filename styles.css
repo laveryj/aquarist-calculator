@@ -1,0 +1,177 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fed22e; /* Complementary background color */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Remove default margin */
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 800; /* Make the header bold */
+  color: #333;
+}
+
+#main-page {
+  flex: 1; /* This will take up the remaining space */
+  padding: 20px; /* Add some padding */
+  margin-bottom: 40px; /* Add margin to push the footer down */
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
+  justify-content: center;
+}
+
+.calculator-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  color: black; /* Button text color */
+  background-color: #fed22e; /* Button background color */
+  border: 2px solid #000; /* Button border color */
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 200px; /* Set a max-width to keep buttons from being too wide */
+  text-align: center;
+}
+
+.calculator-btn:hover {
+  background-color: #000; /* Button background color on hover */
+  border: 2px solid #000; /* Button border color */
+  color: white; /* Button text color on hover */
+}
+
+.back-btn {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  background-color: #ff1100;
+  border: 2px solid #ff1100; /* Button border color */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: black; /* Button text color */
+  background-color: #fed22e; /* Button background color */
+  border: 2px solid #000; /* Button border color */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#calculator-page {
+  text-align: center;
+}
+
+#calculator {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#calculator label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+#calculator input {
+  width: 250px; /* Adjust width as needed */
+  padding: 10px;
+  margin: 0 auto 10px auto; /* Center the input fields and add some bottom margin */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.water-calculate-btn {
+  padding: 12px 24px;
+  margin-top: 10px;
+  font-size: 18px;
+  color: black; /* Button text color */
+  background-color: #fed22e; /* Button background color */
+  border: 2px solid #000; /* Button border color */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+.water-calculate-btn:hover {
+  background-color: #000; /* Button background color on hover */
+  border: 2px solid #000; /* Button border color */
+  color: white; /* Button text color on hover */
+}
+
+.subheading {
+  text-align: center;
+}
+
+.water-result-container {
+  display: none; /* Hide the result container initially */
+  width: 300px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #000000;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.water-result-container p {
+  margin: 0;
+}
+
+.water-result-container.success {
+  background-color: #d4edda; /* Success background color */
+  color: #000000; /* Text color */
+  border: 2px solid #000; /* Border color */
+}
+
+.water-result-container.error {
+  background-color: #f8d7da; /* Error background color */
+  color: #9a111f; /* Text color */
+  border: 2px solid #000; /* Border color */
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Ensure the footer is at the bottom of the page */
+}
+
+.footer-content {
+  display: inline-block;
+  text-align: center;
+}
+
+footer img {
+  width: 30px; /* Adjust the size to be smaller */
+  vertical-align: middle;
+}
+
+footer p {
+  display: block; /* Changed to block to stack vertically */
+  margin: 5px 0;
+  font-size: 0.7em;
+}
