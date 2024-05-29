@@ -231,7 +231,7 @@ function convertOxygen() {
             result = input; // ppm is equivalent to mg/l in this context
             break;
         case "%":
-            result = input * 9; // Convert percentage to mg/l (1% = 9 mg/l)
+            result = (input / 100) * 9; // Convert percentage to mg/l (1% = 9 mg/l)
             break;
         default:
             result = "Error: invalid unit";
@@ -246,7 +246,7 @@ function convertOxygen() {
             // ppm is equivalent to mg/l in this context, no conversion needed
             break;
         case "%":
-            result = (input / 10) * 100; // Convert from mg/l to percentage (1 mg/l = 0.1%)
+            result = (input / 9) * 100; // Convert from mg/l to percentage (1 mg/l = 9%)
             break;
         default:
             result = "Error: invalid unit";
