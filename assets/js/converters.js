@@ -56,6 +56,9 @@ function convertLength() {
                 return "Invalid unit"; // error handling for invalid units
         }
 
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
+
     console.log("Result:", result); // Log result to console
     console.log("To Unit:", toUnit); // Log toUnit to console
 
@@ -122,6 +125,9 @@ function convertWeight() {
         default:
             result = "Invalid unit";
     }
+
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
 
     // Log result to console
     console.log("Result:", result);
@@ -191,6 +197,9 @@ function convertSalinity() {
             result = "Invalid unit";
     }
 
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
+
     // Log result to console
     console.log("Result:", result);
     console.log("To Unit:", toUnit);
@@ -251,6 +260,9 @@ function convertOxygen() {
         default:
             result = "Error: invalid unit";
     }
+
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
 
     // Log result to console
     console.log("Result:", result);
@@ -313,6 +325,9 @@ function convertTemperature() {
             result = "Invalid unit";
     }
 
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
+
     // Log result to console
     console.log("Result:", result);
     console.log("To Unit:", toUnit);
@@ -374,6 +389,9 @@ function convertVolume() {
         default:
             result = "Invalid unit";
     }
+
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
 
     // Log result to console
     console.log("Result:", result);
