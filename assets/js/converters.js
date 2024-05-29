@@ -210,7 +210,7 @@ function convertOxygen() {
             result = input * 10;
             break;
         default:
-            result = "Invalid unit";
+            result = "Error: invalid unit";
     }
 
     switch (toUnit) {
@@ -219,10 +219,10 @@ function convertOxygen() {
         case "ppm":
             break;
         case "%":
-            result /= 10;
+            result = (input / 100) * 9;
             break;
         default:
-            result = "Invalid unit";
+            result = "Error: invalid unit";
     }
 
     console.log("Result:", result); // Log result to console
