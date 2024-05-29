@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Load partials
-    loadPartial('import-header', '/partials/header.html');
-    loadPartial('import-title', '/partials/title.html');
-    loadPartial('import-footer', '/partials/footer.html');
-    loadPartial('import-coming_soon', '/partials/coming_soon.html');
+    loadPartial('import-header', '/aquarist-calculator/partials/header.html');
+    loadPartial('import-title', '/aquarist-calculator/partials/title.html');
+    loadPartial('import-footer', '/aquarist-calculator/partials/footer.html');
+    loadPartial('import-coming_soon', '/aquarist-calculator/partials/coming_soon.html');
 
     const mainPage = document.getElementById("main-page");
     const calculatorPage = document.getElementById("calculator-page");
