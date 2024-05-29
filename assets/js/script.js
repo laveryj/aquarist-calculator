@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nutritionCategoryBtn = document.getElementById("nutrition-btn");
     const medicineCategoryBtn = document.getElementById("medicine-btn");
     const convertersCategoryBtn = document.getElementById("converters-btn");
-    const volumetricCategoryBtn = document.getElementById("volumetric-btn");
+    const volumetricCategoryBtn = document.getElementById("Calculators-btn");
 
     // Check if converter 1 has been selected
     if (converter1) {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (volumetricCategoryBtn) {
         volumetricCategoryBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
-            window.location.href = "/aquarist-calculator/category/menu/volumetric.html"; // Redirect to the volumetric page
+            window.location.href = "/aquarist-calculator/category/menu/calculators.html"; // Redirect to the volumetric page
         });
     }
 
