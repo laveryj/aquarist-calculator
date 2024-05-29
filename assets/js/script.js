@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (converter6) {
         converter6.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
-            window.location.href = "/aquarist-calculator/category/converters/oxygen.html"; // Redirect to the oxygen converter page
+            window.location.href = "/aquarist-calculator/category/converters/dissolved-oxygen.html"; // Redirect to the oxygen converter page
         });
     }
 
