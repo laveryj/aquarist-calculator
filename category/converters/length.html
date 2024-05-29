@@ -1,0 +1,62 @@
+<!-- Page for length conversion calculator -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import header & title from /partials -->
+<div id="import-header"></div>
+<div id="import-title"></div>
+
+<body>
+    <div id="calculator-page">
+        <button class="back-btn" id="back-button">Back</button>
+        <button class="reset-btn" id="reset-button">Reset</button>
+        <h2 id="calculator-type">Length Converter</h2>
+        <div id="calculator">
+            <!-- Length converter inputs and button -->
+            <label for="length">Enter length:</label>
+            <input type="number" id="length-input" name="length" placeholder="Enter length..." required><br>
+            <br>
+
+            <label for="from-unit">From:</label>
+            <select id="from-unit" name="from-unit">
+                <option value="mm">Millimeters</option>
+                <option value="cm">Centimeters</option>
+                <option value="m">Meters</option>
+                <option value="km">Kilometers</option>
+                <option value="in">Inches</option>
+                <option value="ft">Feet</option>
+                <option value="yd">Yards</option>
+                <option value="mi">Miles</option>
+            </select><br>
+            <br>
+
+            <label for="to-unit">To:</label>
+            <select id="to-unit" name="to-unit">
+                <option value="mm">Millimeters</option>
+                <option value="cm">Centimeters</option>
+                <option value="m">Meters</option>
+                <option value="km">Kilometers</option>
+                <option value="in">Inches</option>
+                <option value="ft">Feet</option>
+                <option value="yd">Yards</option>
+                <option value="mi">Miles</option>
+            </select><br>
+            <br>
+
+            <button id="length-convert-btn" class="calculator-btn">Calculate</button><br>
+
+            <div id="length-result" class="water-result-container"></div>
+
+            <br>
+            <a id="create-record-link" href="#" style="display:none;">Create a record</a>
+        </div>
+    </div>
+
+    <div id="import-footer"></div>
+
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/converters.js"></script>
+
+</body>
+</html>
