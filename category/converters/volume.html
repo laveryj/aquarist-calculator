@@ -12,9 +12,37 @@
         <button class="back-btn" id="back-button">Back</button>
         <button class="reset-btn" id="reset-button">Reset</button>
         <h2 id="calculator-type">Volume Converter</h2>
-        
-        <div id="import-coming_soon"></div>
+        <div id="calculator">
+            <!-- Volume converter inputs and button -->
+            <label for="volume">Enter volume:</label>
+            <input type="number" id="volume-input" name="volume" placeholder="Enter volume..." required><br>
+            <br>
 
+            <label for="from-unit">From:</label>
+            <select id="from-unit" name="from-unit">
+                <option value="ml">Milliliters (ml)</option>
+                <option value="l">Liters (l)</option>
+                <option value="gal">Gallons (gal)</option>
+                <option value="oz">Ounces (oz)</option>
+            </select><br>
+            <br>
+
+            <label for="to-unit">To:</label>
+            <select id="to-unit" name="to-unit">
+                <option value="ml">Milliliters (ml)</option>
+                <option value="l">Liters (l)</option>
+                <option value="gal">Gallons (gal)</option>
+                <option value="oz">Ounces (oz)</option>
+            </select><br>
+            <br>
+
+            <button id="volume-convert-btn" class="calculator-btn">Convert</button><br>
+
+            <div id="volume-result" class="water-result-container"></div>
+
+            <br>
+            <a id="create-record-link" href="#" style="display:none;">Create a record</a>
+        
     </div>
 
     <div id="import-footer"></div>

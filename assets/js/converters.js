@@ -303,9 +303,6 @@ function convertTemperature() {
         case "F":
             result = (input - 32) * (5 / 9); // Convert Fahrenheit to Celsius
             break;
-        case "K":
-            result = input - 273.15; // Convert Kelvin to Celsius
-            break;
         default:
             result = "Invalid unit";
     }
@@ -317,9 +314,6 @@ function convertTemperature() {
             break;
         case "F":
             result = (input * (9 / 5)) + 32; // Convert Celsius to Fahrenheit
-            break;
-        case "K":
-            result += 273.15; // Convert Celsius to Kelvin
             break;
         default:
             result = "Invalid unit";
