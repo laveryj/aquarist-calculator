@@ -177,6 +177,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Check if weight converter button pressed
+    if (weightConvertBtn) {
+        weightConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertWeight();
+        });
+    }
+    
     // Function to show the main page and reset calculator values to zero
     function showMainPage() {
         mainPage.style.display = "block";
