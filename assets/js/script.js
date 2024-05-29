@@ -68,6 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const convertersCategoryBtn = document.getElementById("converters-btn");
     const calculatorsCategoryBtn = document.getElementById("Calculators-btn");
 
+
+    const newtestBtn = document.getElementById("newtest-btn");
+    
     // Check if converter 1 has been selected
     if (converter1) {
         converter1.addEventListener("click", function(event) { // Add event parameter to the function
@@ -128,6 +131,14 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             console.log("Alkalinity button clicked");
             window.location.href = "/aquarist-calculator/category/converters/alkalinity.html"; // Redirect to the alkalinity converter page
+        });
+    }
+
+    if (newtestBtn) {
+        newtestBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            event.preventDefault();
+            console.log("New test button clicked");
+            window.location.href = "/aquarist-calculator/category/calculators/lengthv2.html"; // Redirect to the New Test calculator page
         });
     }
 

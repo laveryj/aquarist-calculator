@@ -442,3 +442,53 @@ function convertAlkalinity() {
 
 }
 
+document.getElementById("input-value").addEventListener("input", convertUnits);
+document.getElementById("input-unit").addEventListener("change", convertUnits);
+
+function convertUnitTest() {
+    const inputValue = parseFloat(document.getElementById("input-value").value);
+    const inputUnit = document.getElementById("input-unit").value;
+
+    if (isNaN(inputValue)) {
+        clearOutputs();
+        return;
+    }
+
+    let valueInCm;
+
+    // Convert input value to centimeters first
+    switch (inputUnit) {
+        case "mm":
+            valueInCm = inputValue / 10;
+            break;
+        case "cm":
+            valueInCm = inputValue;
+            break;
+        case "m":
+            valueInCm = inputValue * 100;
+            break;
+        case "ft":
+            valueInCm = inputValue * 30.48;
+            break;
+        case "km":
+            valueInCm = inputValue * 100000;
+            break;
+        default:
+            valueInCm = 0;
+    }
+
+    // Convert from centimeters to all other units
+    document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
+    document.getElementById("output-cm").value = valueInCm.toFixed(2);
+    document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
+    document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
+    document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
+}
+
+function clearOutputs() {
+    document.getElementById("output-mm").value = '';
+    document.getElementById("output-cm").value = '';
+    document.getElementById("output-m").value = '';
+    document.getElementById("output-ft").value = '';
+    document.getElementById("output-km").value = '';
+}
