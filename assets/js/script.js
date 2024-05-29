@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if converter 1 has been selected
     if (converter1) {
         converter1.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Length button clicked");
             event.preventDefault();
             window.location.href = "/aquarist-calculator/category/converters/length.html"; // Redirect to the length converter page
         });
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if converter 2 has been selected
     if (converter2) {
         converter2.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Temperature button clicked");
             event.preventDefault();
             window.location.href = "/aquarist-calculator/category/converters/temperature.html"; // Redirect to the temperature converter page
         });
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if converter 3 has been selected
     if (converter3) {
         converter3.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Weight button clicked");
             event.preventDefault();
             window.location.href = "/aquarist-calculator/category/converters/weight.html"; // Redirect to the weight converter page
         });
@@ -92,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (converter4) {
         converter4.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Volume button clicked");
             window.location.href = "/aquarist-calculator/category/converters/volume.html"; // Redirect to the volume converter page
         });
     }
@@ -100,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (converter5) {
         converter5.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Salinity button clicked");
             window.location.href = "/aquarist-calculator/category/converters/salinity.html"; // Redirect to the salinity converter page
         });
     }
@@ -108,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (converter6) {
         converter6.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Oxygen button clicked");
             window.location.href = "/aquarist-calculator/category/converters/dissolved-oxygen.html"; // Redirect to the oxygen converter page
         });
     }
@@ -116,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (nutritionCategoryBtn) {
         nutritionCategoryBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Nutrition button clicked");
             window.location.href = "/aquarist-calculator/category/menu/nutrition.html"; // Redirect to the nutrition page
         });
     }
@@ -124,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (medicineCategoryBtn) {
         medicineCategoryBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Medicine button clicked");
             window.location.href = "/aquarist-calculator/category/menu/medicine.html"; // Redirect to the medicine page
         });
     }
@@ -132,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (convertersCategoryBtn) {
         convertersCategoryBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Converters button clicked");
             window.location.href = "/aquarist-calculator/category/menu/converters.html"; // Redirect to the converters page
         });
     }
@@ -140,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (volumetricCategoryBtn) {
         volumetricCategoryBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
+            console.log("Calculators button clicked");
             window.location.href = "/aquarist-calculator/category/menu/calculators.html"; // Redirect to the volumetric page
         });
     }

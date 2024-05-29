@@ -200,7 +200,7 @@ function convertOxygen() {
 
     // Calculate result based on conversion
     switch (fromUnit) {
-        case "mg/L":
+        case "mg/l":
             result = input;
             break;
         case "ppm":
@@ -214,7 +214,7 @@ function convertOxygen() {
     }
 
     switch (toUnit) {
-        case "mg/L":
+        case "mg/l":
             break;
         case "ppm":
             break;
