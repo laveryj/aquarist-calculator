@@ -40,17 +40,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const converter2 = document.getElementById("temperature-btn");
     const converter3 = document.getElementById("weight-btn");
     const converter4 = document.getElementById("volume-btn");
+    const converter5 = document.getElementById("salinity-btn");
+    const converter6 = document.getElementById("oxygen-btn");
 
     // Global declaration of converter category buttons
     const lengthConverterBtn = document.getElementById("length-converter");
     const temperatureConverterBtn = document.getElementById("temperature-converter");
     const weightConverterBtn = document.getElementById("weight-converter");
     const volumeConverterBtn = document.getElementById("volume-converter");
+    const salinityConverterBtn = document.getElementById("salinity-converter");
+    const oxygenConverterBtn = document.getElementById("oxygen-converter");
 
     const lengthConvertBtn = document.getElementById("length-convert-btn");
     const weightConvertBtn = document.getElementById("weight-convert-btn");
     const temperatureConvertBtn = document.getElementById("temperature-convert-btn");
     const volumeConvertBtn = document.getElementById("volume-convert-btn");
+    const salinityConvertBtn = document.getElementById("salinity-convert-btn");
+    const oxygenConvertBtn = document.getElementById("oxygen-convert-btn");
 
     // Global declaration of category variables
     const nutritionCategoryBtn = document.getElementById("nutrition-btn");
@@ -87,6 +93,22 @@ document.addEventListener("DOMContentLoaded", function() {
         converter4.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
             window.location.href = "/aquarist-calculator/category/converters/volume.html"; // Redirect to the volume converter page
+        });
+    }
+
+    // Check if converter 5 has been selected
+    if (converter5) {
+        converter5.addEventListener("click", function(event) { // Add event parameter to the function
+            event.preventDefault();
+            window.location.href = "/aquarist-calculator/category/converters/salinity.html"; // Redirect to the salinity converter page
+        });
+    }
+
+    // Check if converter 6 has been selected
+    if (converter6) {
+        converter6.addEventListener("click", function(event) { // Add event parameter to the function
+            event.preventDefault();
+            window.location.href = "/aquarist-calculator/category/converters/oxygen.html"; // Redirect to the oxygen converter page
         });
     }
 
@@ -184,6 +206,38 @@ document.addEventListener("DOMContentLoaded", function() {
             convertWeight();
         });
     }
+
+    // Check if temperature converter button pressed
+    if (temperatureConvertBtn) {
+        temperatureConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertTemperature();
+        });
+    }
+
+    // Check if volume converter button pressed
+    if (volumeConvertBtn) {
+        volumeConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertVolume();
+        });
+    }
+
+    // Check if salinity converter button pressed
+    if (salinityConvertBtn) {
+        salinityConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertSalinity();
+        });
+    }
+
+    // Check if oxygen converter button pressed
+    if (oxygenConvertBtn) {
+        oxygenConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertOxygen();
+        });
+    }
     
     // Function to show the main page and reset calculator values to zero
     function showMainPage() {
@@ -207,44 +261,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("water-result").style.display = "none";
         if (createRecordLink) {
             createRecordLink.style.display = "none";
-        }
-    }
-
-    // Function to process calculation for edible
-    function calculateEdible() {
-        const volume = parseFloat(document.getElementById("volume").value);
-        const targetConcentration = parseFloat(document.getElementById("target-concentration").value);
-        const drugConcentration = parseFloat(document.getElementById("drug-concentration").value);
-
-        if (isNaN(volume) || isNaN(targetConcentration) || isNaN(drugConcentration)) {
-            resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
-            return;
-        }
-
-        const quantityNeeded = (targetConcentration * volume) / drugConcentration;
-        resultContainer.innerHTML = `<p>Tablets needed: ${quantityNeeded.toFixed(2)}</p>`;
-        resultContainer.style.display = "block"; // Display the result container
-        if (createRecordLink) {
-            createRecordLink.style.display = "inline"; // Show the link
-        }
-    }
-
-    // Function to process calculation for water
-    function calculateWaterSoluble() {
-        const volume = parseFloat(document.getElementById("volume").value);
-        const targetConcentration = parseFloat(document.getElementById("target-concentration").value);
-        const drugConcentration = parseFloat(document.getElementById("drug-concentration").value);
-
-        if (isNaN(volume) || isNaN(targetConcentration) || isNaN(drugConcentration)) {
-            resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
-            return;
-        }
-
-        const quantityNeeded = (targetConcentration * volume) / drugConcentration;
-        resultContainer.innerHTML = `<p>Volume needed: ${quantityNeeded.toFixed(2)} ml</p>`;
-        resultContainer.style.display = "block"; // Display the result container
-        if (createRecordLink) {
-            createRecordLink.style.display = "inline"; // Show the link
         }
     }
 
