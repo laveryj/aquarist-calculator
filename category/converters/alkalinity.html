@@ -1,0 +1,55 @@
+<!-- Page for alkalinity conversion calculator -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import header & title from /partials -->
+<div id="import-header"></div>
+<div id="import-title"></div>
+
+<body>
+    <div id="calculator-page">
+        <button class="back-btn" id="back-button">Back</button>
+        <button class="reset-btn" id="reset-button">Reset</button>
+        <h2 id="calculator-type">Alkalinity Converter</h2>
+        <div id="calculator">
+            <!-- Length converter inputs and button -->
+            <label for="length">Enter value:</label>
+            <input type="number" id="alkalinity-input" name="length" placeholder="Enter value..." required><br>
+            <br>
+
+            <label for="from-unit">From:</label>
+            <select id="from-unit" name="from-unit">
+                <option value="mg/l">Milligrams per liter (mg/l)</option>
+                <option value="ppm">Parts per million (ppm)</option>
+                <option value="dKH">Degrees of carbonate hardness (dKH)</option>
+                <option value="meq/l">Milliequivalents per liter (meq/l)</option>
+            </select><br>
+            <br>
+
+            <label for="to-unit">To:</label>
+            <select id="to-unit" name="to-unit">
+                <option value="mg/l">Milligrams per liter (mg/l)</option>
+                <option value="ppm">Parts per million (ppm)</option>
+                <option value="dKH">Degrees of carbonate hardness (dKH)</option>
+                <option value="meq/l">Milliequivalents per liter (meq/l)</option>
+            </select><br>
+            <br>
+
+            <button id="alkalinity-convert-btn" class="calculator-btn">Convert</button><br>
+
+            <div id="alkalinity-result" class="water-result-container"></div>
+            
+            <br>
+            <a id="create-record-link" href="#" style="display:none;">Create a record</a>
+        </div>
+    </div>
+
+    <div id="import-footer"></div>
+
+    <script src="/aquarist-calculator/assets/js/script.js"></script>
+    <script src="/aquarist-calculator/assets/js/converters.js"></script>
+    <script src="/aquarist-calculator/assets/js/calculators.js"></script>
+
+</body>
+</html>

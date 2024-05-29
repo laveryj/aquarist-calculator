@@ -170,10 +170,10 @@ function convertSalinity() {
             result = input / 1000; // Convert parts per million to parts per thousand (1 ppm = 0.001 ppt)
             break;
         case "sg":
-            result = input / 1000000; // Convert specific gravity to parts per thousand (1 sg = 0.000001 ppt)
+            result = input / 1.0008; // Convert specific gravity to parts per thousand (1 sg = 0.000001 ppt)
             break;
         case "conductivity":
-            result = input / 1000; // Convert conductivity to parts per thousand (assumed conversion, but needs clarification)
+            result = input / 1.968; // Convert conductivity to parts per thousand (assumed conversion, but needs clarification)
             break;
         default:
             result = "Invalid unit";
@@ -188,10 +188,10 @@ function convertSalinity() {
             result *= 1000; // Convert parts per thousand to parts per million (1 ppt = 1000 ppm)
             break;
         case "sg":
-            result *= 1000000; // Convert parts per thousand to specific gravity (1 ppt = 1000000 sg)
+            result *= 1.0008; // Convert parts per thousand to specific gravity (1 ppt = 1000000 sg)
             break;
         case "conductivity":
-            result *= 1000; // Convert parts per thousand to conductivity (assumed conversion, but needs clarification)
+            result *= 1.968; // Convert parts per thousand to conductivity (assumed conversion, but needs clarification)
             break;
         default:
             result = "Invalid unit";
@@ -337,7 +337,6 @@ function convertTemperature() {
 
 }
 
-
 // Function to process conversion for volume
 function convertVolume() {
     const input = parseFloat(document.getElementById("volume-input").value);
@@ -402,4 +401,67 @@ function convertVolume() {
 
 }
 
+// Function to process conversion of alkalinity
+function convertAlkalinity() {
+    const input = parseFloat(document.getElementById("alkalinity-input").value);
+    const fromUnit = document.getElementById("from-unit").value;
+    const toUnit = document.getElementById("to-unit").value;
+    const resultContainer = document.getElementById("alkalinity-result");
+
+    // Check if the input is a valid number
+    if (isNaN(input)) {
+        resultContainer.innerHTML = "<p>Please enter a valid number</p>";
+        resultContainer.style.display = "block"; // Display the result container
+        return;
+    }
+
+    let result;
+
+    // Calculate result based on conversion from the input unit to ppm (parts per million)
+    switch (fromUnit) {
+        case "ppm":
+            result = input; // Already in ppm
+            break;
+        case "meq/l":
+            result = input * 50000; // Convert milliequivalents per liter to ppm (1 meq/l = 50000 ppm)
+            break;
+        case "dKH":
+            result = input * 17.848; // Convert degrees carbonate hardness to ppm (1 dKH = 17.848 ppm)
+            break;
+        default:
+            result = "Invalid unit";
+    }
+
+    // Convert the result from ppm to the target unit
+    switch (toUnit) {
+        case "ppm":
+            // Already in ppm, no conversion needed
+            break;
+        case "meq/l":
+            result /= 50000; // Convert ppm to milliequivalents per liter (1 ppm = 0.00002 meq/l)
+            break;
+        case "dKH":
+            result /= 17.848; // Convert ppm to degrees carbonate hardness (1 ppm = 0.056 dKH)
+            break;
+        default:
+            result = "Invalid unit";
+    }
+
+    // Limit the result to two decimal places (two significant figures)
+    result = Number(result.toFixed(2)); // Adjust the number of decimal places as needed
+
+    // Log result to console
+    console.log("Result:", result);
+    console.log("To Unit:", toUnit);
+
+    // Display the result
+    resultContainer.innerHTML = `<p>Result: ${result} ${toUnit}</p>`;
+    resultContainer.style.display = "block"; // Display the result container
+
+    // Show the create record link if applicable
+    if (createRecordLink) {
+        createRecordLink.style.display = "inline"; // Show the link
+    }
+
+}
 

@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const waterCalculateBtn = document.getElementById("water-calculate-btn");
     const createRecordLink = document.getElementById("create-record-link");
     const resultContainer = document.getElementById("water-result");
+    const resetButton = document.getElementById("reset-button");
 
     // Global declaration of converter buttons
     const converter1 = document.getElementById("length-btn");
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const converter4 = document.getElementById("volume-btn");
     const converter5 = document.getElementById("salinity-btn");
     const converter6 = document.getElementById("oxygen-btn");
+    const converter7 = document.getElementById("alkalinity-btn");
 
     // Global declaration of converter category buttons
     const lengthConverterBtn = document.getElementById("length-converter");
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const volumeConverterBtn = document.getElementById("volume-converter");
     const salinityConverterBtn = document.getElementById("salinity-converter");
     const oxygenConverterBtn = document.getElementById("oxygen-converter");
+    const alkalinityConverterBtn = document.getElementById("alkalinity-converter");
 
     const lengthConvertBtn = document.getElementById("length-convert-btn");
     const weightConvertBtn = document.getElementById("weight-convert-btn");
@@ -57,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const volumeConvertBtn = document.getElementById("volume-convert-btn");
     const salinityConvertBtn = document.getElementById("salinity-convert-btn");
     const oxygenConvertBtn = document.getElementById("oxygen-convert-btn");
+    const alkalinityConvertBtn = document.getElementById("alkalinity-convert-btn");
 
     // Global declaration of category variables
     const nutritionCategoryBtn = document.getElementById("nutrition-btn");
@@ -115,6 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             console.log("Oxygen button clicked");
             window.location.href = "/aquarist-calculator/category/converters/dissolved-oxygen.html"; // Redirect to the oxygen converter page
+        });
+    }
+
+    // Check if converter 7 has been selected
+    if (converter7) {
+        converter7.addEventListener("click", function(event) { // Add event parameter to the function
+            event.preventDefault();
+            console.log("Alkalinity button clicked");
+            window.location.href = "/aquarist-calculator/category/converters/alkalinity.html"; // Redirect to the alkalinity converter page
         });
     }
 
@@ -179,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Check if reset button pressed 
-    const resetButton = document.getElementById("reset-button");
     if (resetButton) {
         resetButton.addEventListener("click", function(event) { // Add event parameter to the function
             // Call the resetInputFields function here
@@ -249,6 +261,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
+    // Check if alkalinity converter button pressed
+    if (alkalinityConvertBtn) {
+        alkalinityConvertBtn.addEventListener("click", function(event) { // Add event parameter to the function
+            console.log("Convert button clicked");
+            convertAlkalinity();
+        });
+    }
+
     // Function to show the main page and reset calculator values to zero
     function showMainPage() {
         mainPage.style.display = "block";
