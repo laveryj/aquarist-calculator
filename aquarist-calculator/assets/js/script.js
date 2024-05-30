@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const convertersCategoryBtn = document.getElementById("converters-btn");
     const calculatorsCategoryBtn = document.getElementById("Calculators-btn");
 
-
     const newtestBtn = document.getElementById("newtest-btn");
     
     // Check if converter 1 has been selected
