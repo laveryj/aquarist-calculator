@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadPartial('import-coming_soon', '/aquarist-calculator/partials/coming_soon.html');
 
     const mainPage = document.getElementById("main-page");
-    const calculatorPage = document.getElementById("calculator-page");
+    // const calculatorPage = document.getElementById("calculator-page");
     const backButton = document.getElementById("back-button");
     const waterBtn = document.getElementById("water-btn");
     const edibleBtn = document.getElementById("edible-btn");
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nutritionCategoryBtn = document.getElementById("nutrition-btn");
     const medicineCategoryBtn = document.getElementById("medicine-btn");
     const convertersCategoryBtn = document.getElementById("converters-btn");
-    const calculatorsCategoryBtn = document.getElementById("Calculators-btn");
+    const calculatorsCategoryBtn = document.getElementById("calculators-btn");
 
     const newtestBtn = document.getElementById("newtest-btn");
     
