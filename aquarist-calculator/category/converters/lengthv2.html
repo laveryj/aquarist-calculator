@@ -1,0 +1,54 @@
+<!-- Page for length conversion calculator -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import header & title from /partials -->
+<div id="import-header"></div>
+<div id="import-title"></div>
+
+<body>
+    <div id="calculator-page">
+        <button class="back-btn" id="back-button">Back</button>
+        <button class="reset-btn" id="reset-button">Reset</button>
+        <h2 id="calculator-type">Length Converter</h2>
+        <div id="calculator">
+            <label for="length">Enter value:</label>
+            <input type="number" id="input-value" name="length" placeholder="Enter value..." required><br><br>
+
+            <div>
+                <label for="input-unit">Select Unit:</label>
+                <select id="input-unit">
+                    <option value="mm">Millimeters (mm)</option>
+                    <option value="cm">Centimeters (cm)</option>
+                    <option value="m">Meters (m)</option>
+                    <option value="ft">Feet (ft)</option>
+                    <option value="km">Kilometers (km)</option>
+                </select>
+            </div>
+        
+            <div>
+                <p>Converted Values:</p>
+                <label for="output-mm">Millimeters (mm):</label><input type="text" id="output-mm" readonly><br>
+                <label for="output-cm">Centimeters (cm):</label><input type="text" id="output-cm" readonly><br>
+                <label for="output-m">Meters (m):</label><input type="text" id="output-m" readonly><br>
+                <label for="output-ft">Feet (ft):</label><input type="text" id="output-ft" readonly><br>
+                <label for="output-km">Kilometers (km):</label><input type="text" id="output-km" readonly><br>
+            </div>
+
+            <button id="salinity-convert-btn" class="calculator-btn">Convert</button><br>
+
+            <div id="salinity-result" class="water-result-container"></div>
+
+            <br>
+            <a id="create-record-link" href="#" style="display:none;">Create a record</a>
+        </div>
+    </div>
+
+    <div id="import-footer"></div>
+
+    <script src="/aquarist-calculator/assets/js/script.js"></script>
+    <script src="/aquarist-calculator/assets/js/converters.js"></script>
+    <script src="/aquarist-calculator/assets/js/calculators.js"></script>
+</body>
+</html>

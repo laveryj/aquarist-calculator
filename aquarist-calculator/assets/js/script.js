@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
         newtestBtn.addEventListener("click", function(event) { // Add event parameter to the function
             event.preventDefault();
             console.log("New test button clicked");
-            window.location.href = "/aquarist-calculator/category/calculators/lengthv2.html"; // Redirect to the New Test calculator page
+            window.location.href = "/aquarist-calculator/category/converters/lengthv2.html"; // Redirect to the New Test calculator page
         });
     }
 

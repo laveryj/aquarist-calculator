@@ -19,7 +19,7 @@ function convertLength() {
         return;
     }
     
-        // Convert from fromUnit to cm
+        // Convert from fromUnit to base unit cm
         switch (fromUnit) {
             case "mm":
                 result = input / 10; // 10 mm = 1 cm
@@ -32,6 +32,18 @@ function convertLength() {
                 break;
             case "km":
                 result = input * 100000; // 1 km = 100000 cm
+                break;
+            case "in":
+                result = input * 2.54; // 1 in = 2.54 cm
+                break;
+            case "ft":
+                result = input * 30.48; // 1 ft = 30.48 cm
+                break;
+            case "yd":
+                result = input * 91.44; // 1 yd = 91.44 cm
+                break;
+            case "mi":
+                result = input * 160934; // 1 mi = 160934 cm
                 break;
             default:
                 return "Invalid unit"; // error handling for invalid units
@@ -49,6 +61,18 @@ function convertLength() {
                 break;
             case "km":
                 result /= 100000; // 100000 cm = 1 km
+                break;
+            case "in":
+                result /= 2.54; // 2.54 cm = 1 in
+                break;
+            case "ft":
+                result /= 30.48; // 30.48 cm = 1 ft
+                break;
+            case "yd":
+                result /= 91.44; // 91.44 cm = 1 yd
+                break;
+            case "mi":
+                result /= 160934; // 160934 cm = 1 mi
                 break;
             default:
                 return "Invalid unit"; // error handling for invalid units
@@ -99,6 +123,18 @@ function convertWeight() {
         case "t":
             result = input * 1000000; // Convert metric tons to grams (1 t = 1000000 g)
             break;
+        case "oz":
+            result = input * 28.3495; // Convert ounces to grams (1 oz = 28.3495 g)
+            break;
+        case "lb":
+            result = input * 453.592; // Convert pounds to grams (1 lb = 453.592 g)
+            break;
+        case "st":
+            result = input * 6350.29; // Convert stones to grams (1 st = 6350.29 g)
+            break;
+        case "ton":
+            result = input * 907185; // Convert tons to grams (1 ton = 907185 g)
+            break;
         default:
             result = "Invalid unit";
     }
@@ -116,6 +152,18 @@ function convertWeight() {
             break;
         case "t":
             result /= 1000000; // Convert grams to metric tons (1 t = 1000000 g)
+            break;
+        case "oz":
+            result /= 28.3495; // Convert grams to ounces (1 oz = 28.3495 g)
+            break;
+        case "lb":
+            result /= 453.592; // Convert grams to pounds (1 lb = 453.592 g)
+            break;
+        case "st":
+            result /= 6350.29; // Convert grams to stones (1 st = 6350.29 g)
+            break;
+        case "ton":
+            result /= 907185; // Convert grams to tons (1 ton = 907185 g)
             break;
         default:
             result = "Invalid unit";
@@ -164,8 +212,11 @@ function convertSalinity() {
         case "sg":
             result = input / 1.0008; // Convert specific gravity to parts per thousand (1 sg = 0.000001 ppt)
             break;
-        case "conductivity":
+        case "µS/cm":
             result = input / 1.968; // Convert conductivity to parts per thousand (assumed conversion, but needs clarification)
+            break;
+        case "psu":
+            result = input; // Already in practical salinity units, which are equivalent to parts per thousand
             break;
         default:
             result = "Invalid unit";
@@ -182,9 +233,11 @@ function convertSalinity() {
         case "sg":
             result *= 1.0008; // Convert parts per thousand to specific gravity (1 ppt = 1000000 sg)
             break;
-        case "conductivity":
+        case "µS/cm":
             result *= 1.968; // Convert parts per thousand to conductivity (assumed conversion, but needs clarification)
             break;
+        case "psu":
+            // Already in practical salinity units, which are equivalent to parts per thousand, no conversion needed
         default:
             result = "Invalid unit";
     }
@@ -347,6 +400,12 @@ function convertVolume() {
         case "m3":
             result = input * 1000000; // Convert cubic meters to milliliters (1 cubic meter = 1000000 milliliters)
             break;
+        case "gal":
+            result = input * 3785.41; // Convert gallons to milliliters (1 gallon = 3785.41 milliliters)
+            break;
+        case "oz":
+            result = input * 29.5735; // Convert ounces to milliliters (1 ounce = 29.5735 milliliters)
+            break;
         default:
             result = "Invalid unit";
     }
@@ -361,6 +420,12 @@ function convertVolume() {
             break;
         case "m3":
             result /= 1000000; // Convert milliliters to cubic meters (1 milliliter = 0.000001 cubic meters)
+            break;
+        case "gal":
+            result /= 3785.41; // Convert milliliters to gallons (1 milliliter = 0.000264172 gallons)
+            break;
+        case "oz":
+            result /= 29.5735; // Convert milliliters to ounces (1 milliliter = 0.033814 ounces)
             break;
         default:
             result = "Invalid unit";
@@ -408,6 +473,9 @@ function convertAlkalinity() {
         case "dKH":
             result = input * 17.848; // Convert degrees carbonate hardness to ppm (1 dKH = 17.848 ppm)
             break;
+        case "mg/l":
+            result = input; // ppm is equivalent to mg/l in this context
+            break;
         default:
             result = "Invalid unit";
     }
@@ -422,6 +490,9 @@ function convertAlkalinity() {
             break;
         case "dKH":
             result /= 17.848; // Convert ppm to degrees carbonate hardness (1 ppm = 0.056 dKH)
+            break;
+        case "mg/l":
+            // ppm is equivalent to mg/l in this context, no conversion needed
             break;
         default:
             result = "Invalid unit";
@@ -442,53 +513,56 @@ function convertAlkalinity() {
 
 }
 
-document.getElementById("input-value").addEventListener("input", convertUnits);
-document.getElementById("input-unit").addEventListener("change", convertUnits);
+//TEST
+    // Add event listeners to input fields and button
+    document.getElementById("input-value").addEventListener("input", convertUnitTest);
+    document.getElementById("input-unit").addEventListener("change", convertUnitTest);
+    document.getElementById("salinity-convert-btn").addEventListener("click", convertUnitTest);
 
-function convertUnitTest() {
-    const inputValue = parseFloat(document.getElementById("input-value").value);
-    const inputUnit = document.getElementById("input-unit").value;
+    function convertUnitTest() {
+        const inputValue = parseFloat(document.getElementById("input-value").value);
+        const inputUnit = document.getElementById("input-unit").value;
 
-    if (isNaN(inputValue)) {
-        clearOutputs();
-        return;
+        if (isNaN(inputValue)) {
+            clearOutputs();
+            return;
+        }
+
+        let valueInCm;
+
+        // Convert input value to centimeters first
+        switch (inputUnit) {
+            case "mm":
+                valueInCm = inputValue / 10;
+                break;
+            case "cm":
+                valueInCm = inputValue;
+                break;
+            case "m":
+                valueInCm = inputValue * 100;
+                break;
+            case "ft":
+                valueInCm = inputValue * 30.48;
+                break;
+            case "km":
+                valueInCm = inputValue * 100000;
+                break;
+            default:
+                valueInCm = 0;
+        }
+
+        // Convert from centimeters to all other units
+        document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
+        document.getElementById("output-cm").value = valueInCm.toFixed(2);
+        document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
+        document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
+        document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
     }
 
-    let valueInCm;
-
-    // Convert input value to centimeters first
-    switch (inputUnit) {
-        case "mm":
-            valueInCm = inputValue / 10;
-            break;
-        case "cm":
-            valueInCm = inputValue;
-            break;
-        case "m":
-            valueInCm = inputValue * 100;
-            break;
-        case "ft":
-            valueInCm = inputValue * 30.48;
-            break;
-        case "km":
-            valueInCm = inputValue * 100000;
-            break;
-        default:
-            valueInCm = 0;
+    function clearOutputs() {
+        document.getElementById("output-mm").value = '';
+        document.getElementById("output-cm").value = '';
+        document.getElementById("output-m").value = '';
+        document.getElementById("output-ft").value = '';
+        document.getElementById("output-km").value = '';
     }
-
-    // Convert from centimeters to all other units
-    document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
-    document.getElementById("output-cm").value = valueInCm.toFixed(2);
-    document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
-    document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
-    document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
-}
-
-function clearOutputs() {
-    document.getElementById("output-mm").value = '';
-    document.getElementById("output-cm").value = '';
-    document.getElementById("output-m").value = '';
-    document.getElementById("output-ft").value = '';
-    document.getElementById("output-km").value = '';
-}
