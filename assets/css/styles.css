@@ -50,7 +50,7 @@ header h1 {
   border-radius: 5px;
   cursor: pointer;
   /* width: 150px; */
-  max-width: 150px; Set a max-width to keep buttons from being too wide
+  max-width: 150px; /* Set a max-width to keep buttons from being too wide*/
   text-align: center;
 }
 
