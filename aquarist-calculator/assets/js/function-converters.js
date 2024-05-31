@@ -12,7 +12,7 @@ function convertLength() {
     const input = parseFloat(document.getElementById("length-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("length-result");
+    const resultContainer = document.getElementById("result");
 
     if (isNaN(input)) {
         resultContainer.innerHTML = "<p>Please enter a valid number</p>";
@@ -98,7 +98,7 @@ function convertWeight() {
     const input = parseFloat(document.getElementById("weight-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("weight-result"); // Result container for weight
+    const resultContainer = document.getElementById("result"); // Result container for weight
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -190,7 +190,7 @@ function convertSalinity() {
     const input = parseFloat(document.getElementById("salinity-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("salinity-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -263,7 +263,7 @@ function convertOxygen() {
     const input = parseFloat(document.getElementById("oxygen-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("oxygen-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -324,7 +324,7 @@ function convertTemperature() {
     const input = parseFloat(document.getElementById("temperature-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("temperature-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -379,7 +379,7 @@ function convertVolume() {
     const input = parseFloat(document.getElementById("volume-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("volume-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -452,7 +452,7 @@ function convertAlkalinity() {
     const input = parseFloat(document.getElementById("alkalinity-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("alkalinity-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {

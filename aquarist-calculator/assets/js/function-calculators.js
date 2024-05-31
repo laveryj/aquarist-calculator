@@ -40,19 +40,26 @@ function calculateWaterSoluble() {
     }
 }
 
-// Function to process calculation for a cylindrical tank from diameter and height
+// Function to process calculation for a cylindrical tank from diameter and height in cm
 function calculateTankVolumeCylinder() {
     const diameter = parseFloat(document.getElementById("diameter").value);
     const height = parseFloat(document.getElementById("height").value);
+    const resultContainer = document.getElementById("result");
 
     if (isNaN(diameter) || isNaN(height)) {
-        resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
+        resultContainer.innerHTML = "<p>Please enter valid digits for all fields</p>";
+        resultContainer.style.display = "block"; // Display the result container
         return;
     }
 
-    const volume = Math.PI * Math.pow(diameter / 2, 2) * height;
-    resultContainer.innerHTML = `<p>Volume: ${volume.toFixed(2)} litres</p>`;
+    let result = (Math.PI * Math.pow(diameter / 2, 2) * height)/1000;
+
+    console.log("Result:", result); // Log result to console
+
+    resultContainer.innerHTML = `<p>Volume: ${result.toFixed(2)} litres</p>`;
     resultContainer.style.display = "block"; // Display the result container
+    resultContainer.style.display = "block"; // Display the result container
+
     if (createRecordLink) {
         createRecordLink.style.display = "inline"; // Show the link
     }
@@ -63,19 +70,20 @@ function calculateTankVolumeSquare() {
     const length = parseFloat(document.getElementById("length").value);
     const width = parseFloat(document.getElementById("width").value);
     const height = parseFloat(document.getElementById("height").value);
-    const resultContainer = document.getElementById("length-result");
+    const resultContainer = document.getElementById("result");
 
     if (isNaN(length) || isNaN(width) || isNaN(height)) {
-        resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
+        resultContainer.innerHTML = "<p>Please enter valid digits for all fields</p>";
+        resultContainer.style.display = "block"; // Display the result container
         return;
     }
 
-    const volume = length * width * height;
+    let result = (length * width * height)/1000;
 
-    console.log("Result:", volume); // Log result to console
+    console.log("Result:", result); // Log result to console
 
     // Display the result
-    resultContainer.innerHTML = `<p>Volume: ${volume.toFixed(2)} litres</p>`;
+    resultContainer.innerHTML = `<p>Volume: ${result.toFixed(2)} litres</p>`;
     resultContainer.style.display = "block"; // Display the result container
 
     // Show the create record link

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let result;
     let toUnit;
     const mainPage = document.getElementById("main-page");
-    const resultContainer = document.getElementById("water-result");
+    const resultContainer = document.getElementById("result");
 
     // **************** Load Partials **************** //
 // Function to load partials

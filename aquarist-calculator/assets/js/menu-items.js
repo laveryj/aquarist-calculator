@@ -1,5 +1,5 @@
 
-console.log('menu-items.js loaded');
+    console.log('menu-items.js loaded');
 
     // **************** Back Button **************** //
     const backButton = document.getElementById("back-button"); // Declare the BACK BUTTON
@@ -65,18 +65,16 @@ console.log('menu-items.js loaded');
     // ******************** END OF FUNCTION ******************** //
 
 
-
-    // **************** Create a Record **************** //    
+    // // **************** Create a Record **************** //    
     const createRecordLink = document.getElementById("create-record-link");
-
-    if (createRecordLink) {
+if (createRecordLink) { // Check if create record link is clicked
     createRecordLink.addEventListener("click", function(event) {
         console.log("Create record link clicked");
         // Prevent the default action of the link (opening the href)
         event.preventDefault();
 
         // Get the result and toUnit values from the DOM
-        const resultText = document.getElementById("length-result").textContent.trim();
+        const resultText = document.getElementById("result").textContent.trim();
         const result = resultText.split(' ')[1]; // Extracting the number part after splitting by space        
         const fromUnit = document.getElementById("from-unit").value;
         const toUnit = document.getElementById("to-unit").value;
@@ -103,22 +101,27 @@ console.log('menu-items.js loaded');
         // If the user enters an email address, proceed to create the record
         createEmailRecord(userEmail, result, fromUnit, toUnit);
     });
-    }
+}
 
-    function createEmailRecord(userEmail, result, fromUnit, toUnit) { // Function to create email record
+    // Function to create email record
+    function createEmailRecord(userEmail, result, fromUnit, toUnit) {
         console.log("Creating email record");
 
-        const currentDate = new Date(); // Get the current date and time
+        // Get the current date and time
+        const currentDate = new Date();
 
-        const options = { // Options for formatting the date
+        // Options for formatting the date
+        const options = {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         };
-        
-        const formattedDate = currentDate.toLocaleDateString(undefined, options); // Format the date with the specified options
 
-        const formattedTime = currentDate.toLocaleTimeString(undefined, { // Get the current time
+        // Format the date with the specified options
+        const formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+        // Get the current time
+        const formattedTime = currentDate.toLocaleTimeString(undefined, {
             hour: '2-digit',
             minute: '2-digit'
         });
@@ -128,13 +131,16 @@ console.log('menu-items.js loaded');
         const bodyContent = `Conversion used: from "${fromUnit}" to "${toUnit}"\n\nResult: ${result}${toUnit}\n\n\n\n`;
         const footer = "Sent by the Aquarist Calculator (www.josephlavery.co.uk/tools).\n\n\n\n";
 
-        const body = `${bodyContent}\n\n${footer}`; // Concatenate the body and footer content
+        // Concatenate the body and footer content
+        const body = `${bodyContent}\n\n${footer}`;
 
-        const mailtoLink = `mailto:${userEmail}?subject=${encodeURIComponent(subjectContent)}&body=${encodeURIComponent(body)}`; // Create a mailto link
+        // Create a mailto link
+        const mailtoLink = `mailto:${userEmail}?subject=${encodeURIComponent(subjectContent)}&body=${encodeURIComponent(body)}`;
 
-        const linkElement = document.createElement('a'); // Create a temporary <a> element
+        // Create a temporary <a> element
+        const linkElement = document.createElement('a');
         linkElement.href = mailtoLink;
 
-        linkElement.click(); // Trigger a click event on the <a> element
+        // Trigger a click event on the <a> element
+        linkElement.click();
     }
-    // ******************** END OF FUNCTION ******************** //
