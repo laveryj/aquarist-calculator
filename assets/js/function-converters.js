@@ -1,7 +1,8 @@
 // ** LOCATION OF CONVERTER FUNCTIONS **
 
+console.log('function-converters.js loaded');
+
 // Global variables
-const createRecordLink = document.getElementById("create-record-link");
 let result;
 let fromUnit;
 let toUnit;
@@ -11,7 +12,7 @@ function convertLength() {
     const input = parseFloat(document.getElementById("length-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("length-result");
+    const resultContainer = document.getElementById("result");
 
     if (isNaN(input)) {
         resultContainer.innerHTML = "<p>Please enter a valid number</p>";
@@ -97,7 +98,7 @@ function convertWeight() {
     const input = parseFloat(document.getElementById("weight-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("weight-result"); // Result container for weight
+    const resultContainer = document.getElementById("result"); // Result container for weight
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -189,7 +190,7 @@ function convertSalinity() {
     const input = parseFloat(document.getElementById("salinity-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("salinity-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -262,7 +263,7 @@ function convertOxygen() {
     const input = parseFloat(document.getElementById("oxygen-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("oxygen-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -323,7 +324,7 @@ function convertTemperature() {
     const input = parseFloat(document.getElementById("temperature-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("temperature-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -378,7 +379,7 @@ function convertVolume() {
     const input = parseFloat(document.getElementById("volume-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("volume-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -451,7 +452,7 @@ function convertAlkalinity() {
     const input = parseFloat(document.getElementById("alkalinity-input").value);
     const fromUnit = document.getElementById("from-unit").value;
     const toUnit = document.getElementById("to-unit").value;
-    const resultContainer = document.getElementById("alkalinity-result");
+    const resultContainer = document.getElementById("result");
 
     // Check if the input is a valid number
     if (isNaN(input)) {
@@ -513,56 +514,59 @@ function convertAlkalinity() {
 
 }
 
-//TEST
-    // Add event listeners to input fields and button
-    document.getElementById("input-value").addEventListener("input", convertUnitTest);
-    document.getElementById("input-unit").addEventListener("change", convertUnitTest);
-    document.getElementById("salinity-convert-btn").addEventListener("click", convertUnitTest);
 
-    function convertUnitTest() {
-        const inputValue = parseFloat(document.getElementById("input-value").value);
-        const inputUnit = document.getElementById("input-unit").value;
 
-        if (isNaN(inputValue)) {
-            clearOutputs();
-            return;
-        }
 
-        let valueInCm;
+// DO NOT KNOW WHAT THIS IS FOR
+//     // Add event listeners to input fields and button
+//     document.getElementById("input-value").addEventListener("input", convertUnitTest);
+//     document.getElementById("input-unit").addEventListener("change", convertUnitTest);
+//     document.getElementById("salinity-convert-btn").addEventListener("click", convertUnitTest);
 
-        // Convert input value to centimeters first
-        switch (inputUnit) {
-            case "mm":
-                valueInCm = inputValue / 10;
-                break;
-            case "cm":
-                valueInCm = inputValue;
-                break;
-            case "m":
-                valueInCm = inputValue * 100;
-                break;
-            case "ft":
-                valueInCm = inputValue * 30.48;
-                break;
-            case "km":
-                valueInCm = inputValue * 100000;
-                break;
-            default:
-                valueInCm = 0;
-        }
+//     function convertUnitTest() {
+//         const inputValue = parseFloat(document.getElementById("input-value").value);
+//         const inputUnit = document.getElementById("input-unit").value;
 
-        // Convert from centimeters to all other units
-        document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
-        document.getElementById("output-cm").value = valueInCm.toFixed(2);
-        document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
-        document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
-        document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
-    }
+//         if (isNaN(inputValue)) {
+//             clearOutputs();
+//             return;
+//         }
 
-    function clearOutputs() {
-        document.getElementById("output-mm").value = '';
-        document.getElementById("output-cm").value = '';
-        document.getElementById("output-m").value = '';
-        document.getElementById("output-ft").value = '';
-        document.getElementById("output-km").value = '';
-    }
+//         let valueInCm;
+
+//         // Convert input value to centimeters first
+//         switch (inputUnit) {
+//             case "mm":
+//                 valueInCm = inputValue / 10;
+//                 break;
+//             case "cm":
+//                 valueInCm = inputValue;
+//                 break;
+//             case "m":
+//                 valueInCm = inputValue * 100;
+//                 break;
+//             case "ft":
+//                 valueInCm = inputValue * 30.48;
+//                 break;
+//             case "km":
+//                 valueInCm = inputValue * 100000;
+//                 break;
+//             default:
+//                 valueInCm = 0;
+//         }
+
+//         // Convert from centimeters to all other units
+//         document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
+//         document.getElementById("output-cm").value = valueInCm.toFixed(2);
+//         document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
+//         document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
+//         document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
+//     }
+
+//     function clearOutputs() {
+//         document.getElementById("output-mm").value = '';
+//         document.getElementById("output-cm").value = '';
+//         document.getElementById("output-m").value = '';
+//         document.getElementById("output-ft").value = '';
+//         document.getElementById("output-km").value = '';
+//     }

@@ -8,20 +8,32 @@
 <body>
     <div id="content">
         <div id="main-page">
-            <h3 class="subheading">Select a calculator to use:</h3>
+            <h3 class="subheading">Select a category:</h3>
             <br>
             <p>A range of handy tools to help you with useful calculations in your day-to-day work.</p>
             <br>
             <div class="options">
-                <div id="import-coming_soon"></div>
-                <!-- <button class="calculator-btn" id="button-1">Volume A</button>
-                <button class="calculator-btn" id="button-2">Volume B</button>
-                <button class="calculator-btn" id="button-3">Volume C</button>
-                <button class="calculator-btn" id="button-4">Volume D</button>
-                <button class="calculator-btn" id="button-5">Volume E</button>
-                <button class="calculator-btn" id="button-6">Volume F</button> -->
-                <!-- buttons for tank volume etc -->
+                <button class="nav-btn" id="nav-volume-square">Tank Volume (square)</button>
+                <button class="nav-btn" id="nav-volume-cylinder">Tank Volume (cylindrical)</button>
             </div>
+            <br>
+            <br>
+            <div id="import-coming_soon"></div>
+
+            <div class="options">
+                <button class="calculator-btn-grey" id="button-5">Tank Volume (dome)</button>
+                <button class="calculator-btn-grey" id="button-5">Tank Volume (hemisphere)</button>
+                <button class="calculator-btn-grey" id="button-5">Tank Volume (triangular)</button>
+                <button class="calculator-btn-grey" id="button-5">Tank Volume (spherical)</button>
+                <button class="calculator-btn-grey" id="button-5">Water Change</button>
+                <button class="calculator-btn-grey" id="button-5">Salinity Change</button>
+                <button class="calculator-btn-grey" id="button-5">Saltwater Dilution</button>
+                <button class="calculator-btn-grey" id="button-5">Target Salinity</button>
+                <button class="calculator-btn-grey" id="button-5">Substrate Qty</button>
+                <button class="calculator-btn-grey" id="button-5">Heater/Chiller Sizer</button>
+                <button class="calculator-btn-grey" id="button-5">Pump Turnover</button>
+                <button class="calculator-btn-grey" id="button-5">pH Correction</button>
+            </div>           
             <br>
             <button class="back-btn" id="back-button">Back</button>
         </div>
@@ -29,9 +41,8 @@
 
     <div id="import-footer"></div>
 
+    <script src="/aquarist-calculator/assets/js/menu-items.js"></script>
     <script src="/aquarist-calculator/assets/js/script.js"></script>
-    <script src="/aquarist-calculator/assets/js/converters.js"></script>
-    <script src="/aquarist-calculator/assets/js/calculators.js"></script>
 
 </body>
 </html>
