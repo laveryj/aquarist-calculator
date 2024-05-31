@@ -1,5 +1,7 @@
 // ** LOCATION OF CALCULATE FUNCTIONS **
 
+console.log('function-calculators.js loaded');
+
  // Function to process calculation for edible
  function calculateEdible() {
     const volume = parseFloat(document.getElementById("volume").value);
@@ -33,6 +35,50 @@ function calculateWaterSoluble() {
     const quantityNeeded = (targetConcentration * volume) / drugConcentration;
     resultContainer.innerHTML = `<p>Volume needed: ${quantityNeeded.toFixed(2)} ml</p>`;
     resultContainer.style.display = "block"; // Display the result container
+    if (createRecordLink) {
+        createRecordLink.style.display = "inline"; // Show the link
+    }
+}
+
+// Function to process calculation for a cylindrical tank from diameter and height
+function calculateTankVolumeCylinder() {
+    const diameter = parseFloat(document.getElementById("diameter").value);
+    const height = parseFloat(document.getElementById("height").value);
+
+    if (isNaN(diameter) || isNaN(height)) {
+        resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
+        return;
+    }
+
+    const volume = Math.PI * Math.pow(diameter / 2, 2) * height;
+    resultContainer.innerHTML = `<p>Volume: ${volume.toFixed(2)} litres</p>`;
+    resultContainer.style.display = "block"; // Display the result container
+    if (createRecordLink) {
+        createRecordLink.style.display = "inline"; // Show the link
+    }
+}
+
+// Function to process conversion for length
+function calculateTankVolumeSquare() {
+    const length = parseFloat(document.getElementById("length").value);
+    const width = parseFloat(document.getElementById("width").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const resultContainer = document.getElementById("length-result");
+
+    if (isNaN(length) || isNaN(width) || isNaN(height)) {
+        resultContainer.innerHTML = "<p>Please enter valid digits for all fields.</p>";
+        return;
+    }
+
+    const volume = length * width * height;
+
+    console.log("Result:", volume); // Log result to console
+
+    // Display the result
+    resultContainer.innerHTML = `<p>Volume: ${volume.toFixed(2)} litres</p>`;
+    resultContainer.style.display = "block"; // Display the result container
+
+    // Show the create record link
     if (createRecordLink) {
         createRecordLink.style.display = "inline"; // Show the link
     }

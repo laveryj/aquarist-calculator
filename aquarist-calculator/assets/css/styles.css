@@ -38,6 +38,28 @@ header h1 {
   justify-content: center;
 }
 
+
+.nav-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  color: black; /* Button text color */
+  background-color: #fed22e; /* Button background color */
+  border: 2px solid #000; /* Button border color */
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  /* max-width: 200px; Set a max-width to keep buttons from being too wide */
+  text-align: center;
+}
+
+.nav-btn:hover {
+  background-color: #000; /* Button background color on hover */
+  border: 2px solid #000; /* Button border color */
+  color: white; /* Button text color on hover */
+}
+
 .calculator-btn {
   padding: 10px 20px;
   margin: 10px;
@@ -48,7 +70,8 @@ header h1 {
   border: 2px solid #000; /* Button border color */
   border-radius: 5px;
   cursor: pointer;
-  max-width: 200px; /* Set a max-width to keep buttons from being too wide */
+  width: 150px;
+  /* max-width: 200px; Set a max-width to keep buttons from being too wide */
   text-align: center;
 }
 
@@ -56,6 +79,20 @@ header h1 {
   background-color: #000; /* Button background color on hover */
   border: 2px solid #000; /* Button border color */
   color: white; /* Button text color on hover */
+}
+
+.calculator-btn-grey {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  color: black; /* Button text color */
+  background-color: #bdb8a6; /* Button background color */
+  border: 2px solid #000; /* Button border color */
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 200px; /* Set a max-width to keep buttons from being too wide */
+  text-align: center;
 }
 
 .back-btn {
@@ -180,11 +217,14 @@ footer p {
 
 .notice {
   text-align: center;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #6f6c62;
 }
 
 select {
   width: 250px; /* Adjust width as needed */
-  height: 35px; /* Adjust width as needed */
+  height: 40px; /* Adjust width as needed */
   padding: 10px;
   margin: 0 auto 10px auto; /* Center the input fields and add some bottom margin */
   font-size: 16px;
@@ -192,4 +232,8 @@ select {
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #ffffff00; /* Success background color */
+}
+
+label {
+font-weight: 600;
 }

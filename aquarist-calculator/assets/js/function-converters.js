@@ -1,7 +1,8 @@
 // ** LOCATION OF CONVERTER FUNCTIONS **
 
+console.log('function-converters.js loaded');
+
 // Global variables
-const createRecordLink = document.getElementById("create-record-link");
 let result;
 let fromUnit;
 let toUnit;
@@ -513,56 +514,59 @@ function convertAlkalinity() {
 
 }
 
-//TEST
-    // Add event listeners to input fields and button
-    document.getElementById("input-value").addEventListener("input", convertUnitTest);
-    document.getElementById("input-unit").addEventListener("change", convertUnitTest);
-    document.getElementById("salinity-convert-btn").addEventListener("click", convertUnitTest);
 
-    function convertUnitTest() {
-        const inputValue = parseFloat(document.getElementById("input-value").value);
-        const inputUnit = document.getElementById("input-unit").value;
 
-        if (isNaN(inputValue)) {
-            clearOutputs();
-            return;
-        }
 
-        let valueInCm;
+// DO NOT KNOW WHAT THIS IS FOR
+//     // Add event listeners to input fields and button
+//     document.getElementById("input-value").addEventListener("input", convertUnitTest);
+//     document.getElementById("input-unit").addEventListener("change", convertUnitTest);
+//     document.getElementById("salinity-convert-btn").addEventListener("click", convertUnitTest);
 
-        // Convert input value to centimeters first
-        switch (inputUnit) {
-            case "mm":
-                valueInCm = inputValue / 10;
-                break;
-            case "cm":
-                valueInCm = inputValue;
-                break;
-            case "m":
-                valueInCm = inputValue * 100;
-                break;
-            case "ft":
-                valueInCm = inputValue * 30.48;
-                break;
-            case "km":
-                valueInCm = inputValue * 100000;
-                break;
-            default:
-                valueInCm = 0;
-        }
+//     function convertUnitTest() {
+//         const inputValue = parseFloat(document.getElementById("input-value").value);
+//         const inputUnit = document.getElementById("input-unit").value;
 
-        // Convert from centimeters to all other units
-        document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
-        document.getElementById("output-cm").value = valueInCm.toFixed(2);
-        document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
-        document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
-        document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
-    }
+//         if (isNaN(inputValue)) {
+//             clearOutputs();
+//             return;
+//         }
 
-    function clearOutputs() {
-        document.getElementById("output-mm").value = '';
-        document.getElementById("output-cm").value = '';
-        document.getElementById("output-m").value = '';
-        document.getElementById("output-ft").value = '';
-        document.getElementById("output-km").value = '';
-    }
+//         let valueInCm;
+
+//         // Convert input value to centimeters first
+//         switch (inputUnit) {
+//             case "mm":
+//                 valueInCm = inputValue / 10;
+//                 break;
+//             case "cm":
+//                 valueInCm = inputValue;
+//                 break;
+//             case "m":
+//                 valueInCm = inputValue * 100;
+//                 break;
+//             case "ft":
+//                 valueInCm = inputValue * 30.48;
+//                 break;
+//             case "km":
+//                 valueInCm = inputValue * 100000;
+//                 break;
+//             default:
+//                 valueInCm = 0;
+//         }
+
+//         // Convert from centimeters to all other units
+//         document.getElementById("output-mm").value = (valueInCm * 10).toFixed(2);
+//         document.getElementById("output-cm").value = valueInCm.toFixed(2);
+//         document.getElementById("output-m").value = (valueInCm / 100).toFixed(2);
+//         document.getElementById("output-ft").value = (valueInCm / 30.48).toFixed(2);
+//         document.getElementById("output-km").value = (valueInCm / 100000).toFixed(5);
+//     }
+
+//     function clearOutputs() {
+//         document.getElementById("output-mm").value = '';
+//         document.getElementById("output-cm").value = '';
+//         document.getElementById("output-m").value = '';
+//         document.getElementById("output-ft").value = '';
+//         document.getElementById("output-km").value = '';
+//     }
